@@ -8,33 +8,29 @@ import static org.junit.Assert.*;
 
 public class WeaponTest {
 
-    @Test
-    public void testPhysicalDamage() {
+    public static void main(String[] args) {
+        Weapon Klinokplameni = new Weapon("Пылающий асфальт", 50, 50, 0);
+        Weapon Klinoklda = new Weapon("Меч ночи в якутске", 50, 0, 50);
+        Eafrit eafritfrit = new Eafrit();
+        IceVelikan iceVelikan = new IceVelikan();
 
-        Target t = new Target();
-        Weapon w = new Weapon();
-        w.hit(t);
+        Klinokplameni.hit(eafritfrit);
+        System.out.println("Удар по "+ eafritfrit.getName()+" "+ Klinokplameni.getName() + " Физический урон-"+eafritfrit.getPhysicalDamage() + " " +"Огненый урон-"+ eafritfrit.getFireDamage() +" "+
+                "Ледяной урон-" + eafritfrit.getIceDamage());
 
-        assertEquals(100, t.getPhysicalDamage());
-    }
+        Klinoklda.hit(eafritfrit);
+        System.out.println("Удар по " + eafritfrit.getName()+ " "+ Klinoklda.getName()  + " Физический урон-"+eafritfrit.getPhysicalDamage() + " " +"Огненый урон-"+eafritfrit.getFireDamage()+" "+
+                "Ледяной урон-" + eafritfrit.getIceDamage());
 
-    @Test
-    public void testFireDamage() {
+        Klinokplameni.hit(iceVelikan);
+        System.out.println("Удар по "+ iceVelikan.getName()+" " + Klinokplameni.getName() + " Физический урон-"+iceVelikan.getPhysicalDamage() + " " +"Огненый урон-"+iceVelikan.getFireDamage()+" "+
+                "Ледяной урон-" + iceVelikan.getIceDamage());
 
-        Target t = new Target();
-        Weapon w = new Weapon();
-        w.hit(t);
+        Klinoklda.hit(iceVelikan);
+        System.out.println("Удар по " + iceVelikan.getName()+ " " + Klinoklda.getName() + " Физический урон-"+iceVelikan.getPhysicalDamage() + " " +"Огненый урон-"+iceVelikan.getFireDamage()+" "+
+                "Ледяной урон-" + iceVelikan.getIceDamage());
 
-        assertEquals(100, t.getFireDamage());
-    }
-
-    @Test
-    public void testIceDamage() {
-
-        Target t = new Target();
-        Weapon w = new Weapon();
-        w.hit(t);
-
-        assertEquals(100, t.getIceDamage());
     }
 }
+
+

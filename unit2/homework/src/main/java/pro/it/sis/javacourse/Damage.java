@@ -1,25 +1,14 @@
 package pro.it.sis.javacourse;
 
-public class Target {
+public class Damage {
 
     private int physicalDamage;
     private int fireDamage;
     private int iceDamage;
-    protected String name;
+    Damage (int PhysicalDamage, int FireDamage, int IceDamage) {
 
-    public Target(String name) {
-        this.name = name;
-    }
-
-    public void setPhysicalDamage(int PhysicalDamage) {
         physicalDamage = PhysicalDamage;
-    }
-
-    public void setFireDamage(int FireDamage) {
-        fireDamage = FireDamage ;
-    }
-
-    public void setIceDamage(int IceDamage) {
+        fireDamage = FireDamage;
         iceDamage = IceDamage;
     }
 
@@ -34,9 +23,5 @@ public class Target {
     public int getIceDamage() {
         return iceDamage;
     }
-
-    public String getName() {
-        return name;
-    }
-
 }
+
