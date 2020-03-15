@@ -5,22 +5,32 @@ public class Target {
     private int physicalDamage;
     private int fireDamage;
     private int iceDamage;
+    private int allDamage;
     protected String name;
 
     public Target(String name) {
         this.name = name;
     }
 
-    public void setPhysicalDamage(int PhysicalDamage) {
-        physicalDamage = PhysicalDamage;
+    public void setAllDamage (int allDamage){
+        this.allDamage = allDamage;
     }
 
-    public void setFireDamage(int FireDamage) {
-        fireDamage = FireDamage ;
+    public int getAllDamage() {
+        allDamage = physicalDamage + fireDamage + iceDamage;
+        return allDamage;
     }
 
-    public void setIceDamage(int IceDamage) {
-        iceDamage = IceDamage;
+    public void setPhysicalDamage(int physicalDamage) {
+        this.physicalDamage += physicalDamage;
+    }
+
+    public void setFireDamage(int fireDamage) {
+        this.fireDamage += fireDamage ;
+    }
+
+    public void setIceDamage(int iceDamage) {
+        this.iceDamage += iceDamage;
     }
 
     public int getPhysicalDamage() {

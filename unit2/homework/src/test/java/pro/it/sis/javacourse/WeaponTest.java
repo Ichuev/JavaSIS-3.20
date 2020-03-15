@@ -15,20 +15,16 @@ public class WeaponTest {
         IceVelikan iceVelikan = new IceVelikan();
 
         Klinokplameni.hit(eafritfrit);
-        System.out.println("Удар по "+ eafritfrit.getName()+" "+ Klinokplameni.getName() + " Физический урон-"+eafritfrit.getPhysicalDamage() + " " +"Огненый урон-"+ eafritfrit.getFireDamage() +" "+
-                "Ледяной урон-" + eafritfrit.getIceDamage());
+        System.out.printf("Удар по %s %s Физический урон-%d Огненый урон-%d Ледяной урон-%d Полный урон %d%n", eafritfrit.getName(), Klinokplameni.getName(), eafritfrit.getPhysicalDamage(), eafritfrit.getFireDamage(), eafritfrit.getIceDamage(), eafritfrit.getAllDamage());
 
         Klinoklda.hit(eafritfrit);
-        System.out.println("Удар по " + eafritfrit.getName()+ " "+ Klinoklda.getName()  + " Физический урон-"+eafritfrit.getPhysicalDamage() + " " +"Огненый урон-"+eafritfrit.getFireDamage()+" "+
-                "Ледяной урон-" + eafritfrit.getIceDamage());
+        System.out.printf("Удар по %s %s Физический урон-%d Огненый урон-%d Ледяной урон-%d Полный урон %d%n", eafritfrit.getName(), Klinoklda.getName(), eafritfrit.getPhysicalDamage(), eafritfrit.getFireDamage(), eafritfrit.getIceDamage(), eafritfrit.getAllDamage());
 
         Klinokplameni.hit(iceVelikan);
-        System.out.println("Удар по "+ iceVelikan.getName()+" " + Klinokplameni.getName() + " Физический урон-"+iceVelikan.getPhysicalDamage() + " " +"Огненый урон-"+iceVelikan.getFireDamage()+" "+
-                "Ледяной урон-" + iceVelikan.getIceDamage());
+        System.out.printf("Удар по %s %s Физический урон-%d Огненый урон-%d Ледяной урон-%d Полный урон %d%n", iceVelikan.getName(), Klinokplameni.getName(), iceVelikan.getPhysicalDamage(), iceVelikan.getFireDamage(), iceVelikan.getIceDamage(), iceVelikan.getAllDamage());
 
         Klinoklda.hit(iceVelikan);
-        System.out.println("Удар по " + iceVelikan.getName()+ " " + Klinoklda.getName() + " Физический урон-"+iceVelikan.getPhysicalDamage() + " " +"Огненый урон-"+iceVelikan.getFireDamage()+" "+
-                "Ледяной урон-" + iceVelikan.getIceDamage());
+        System.out.printf("Удар по %s %s Физический урон-%d Огненый урон-%d Ледяной урон-%d Полный урон %d%n", iceVelikan.getName(), Klinoklda.getName(), iceVelikan.getPhysicalDamage(), iceVelikan.getFireDamage(), iceVelikan.getIceDamage(), iceVelikan.getAllDamage());
 
     }
 }
