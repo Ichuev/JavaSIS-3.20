@@ -11,11 +11,18 @@ public class Unit1 {
         checkResult(result);
     }
 
+
+
     /**
      * При реализации метода нельзя использовать метод reverse() из класса StringBuilder
      */
     private static String revertString() {
-        return "";
+
+            StringBuilder newStringRevers = new StringBuilder();
+            for (int i = INPUT_STRING.length() - 1; i >= 0; i--) {
+                newStringRevers.append(INPUT_STRING.charAt(i));
+            }
+            return String.valueOf(newStringRevers);
     }
 
     private static void checkResult(String result) {
