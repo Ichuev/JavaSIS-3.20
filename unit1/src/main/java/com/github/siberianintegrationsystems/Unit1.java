@@ -19,7 +19,7 @@ public class Unit1 {
         for (int i = INPUT_STRING.length() - 1; i >= 0; i--) {
             newStringRevers.append(INPUT_STRING.charAt(i));
         }
-        return String.valueOf(newStringRevers);
+        return newStringRevers.toString();
     }
 
     private static void checkResult(String result) {
