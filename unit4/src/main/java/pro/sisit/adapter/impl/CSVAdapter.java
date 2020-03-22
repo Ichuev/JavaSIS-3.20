@@ -1,12 +1,11 @@
 package pro.sisit.adapter.impl;
 
+import pro.sisit.adapter.IOAdapter;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
-import pro.sisit.adapter.IOAdapter;
+import java.io.IOException;
 
-// 1. TODO: написать реализацию адаптера
-
-public class CSVAdapter<T> implements IOAdapter<T> {
+public abstract class CSVAdapter<T> implements IOAdapter<T> {
 
     private Class<T> entityType;
     private BufferedReader reader;
@@ -21,12 +20,40 @@ public class CSVAdapter<T> implements IOAdapter<T> {
     }
 
     @Override
-    public T read(int index) {
-        throw new RuntimeException("Метод read не реализован");
+    public T read(int index) throws IOException {
+        int countLine = 0;
+        String line;
+        reader.mark(200);
+        while ((line = reader.readLine()) != null) {
+            if (countLine == index) {
+                reader.reset();
+                break;
+            } else {
+                countLine += 1;
+            }
+        }
+
+        String[] parametrs;
+        String splitElement = ";";
+        parametrs = line.split(splitElement);
+        return (T) FileReaderCommon(parametrs);
     }
 
-    @Override
-    public int append(T entity) {
-        throw new RuntimeException("Метод append не реализован");
+        public abstract T FileReaderCommon(String[] parametrs);
+
+
+        @Override
+        public int append(T entity) throws IOException {
+            String line = convertString(entity);
+            writer.write(line);
+            writer.newLine();
+            writer.flush();
+            int index = 0;
+            while ((reader.readLine()) != null) {
+                index += 1;
+            }
+            return index - 1;
+        }
+
+        public abstract String convertString(T entity);
     }
-}
